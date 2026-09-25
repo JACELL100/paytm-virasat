@@ -1,0 +1,46 @@
+# --- Node / Next.js ---
+node_modules/
+.next/
+out/
+frontend/.env.local
+frontend/.env*.local
+*.tsbuildinfo
+next-env.d.ts
+
+# --- Python / FastAPI ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+backend/.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Contracts ---
+contracts/node_modules/
+contracts/cache/
+contracts/.env
+# keep compiled ABI artifacts + deployment addresses committed
+!contracts/artifacts/
+!contracts/deployments/
+
+# --- Supabase ---
+supabase/.branches/
+supabase/.temp/
+
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Secrets ---
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+!*/.env.example
