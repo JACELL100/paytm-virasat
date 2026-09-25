@@ -1,0 +1,61 @@
+Paytm Virasat: AI-powered legacy and claims for your family
+Virasat means "inheritance". Tagline: "Jo aapka hai, woh aapke apno tak pahunche." (What's yours should reach your family.)
+
+The problem most teams will miss
+Most Track 2 teams will build tools for the living customer, like claim chatbots, policy explainers and loan eligibility checkers. Very few will build for the family after the customer dies. That is the hardest financial journey in India:
+
+The family doesn't know which policies, FDs, mutual funds, loans or PF accounts exist.
+Every institution wants different papers, such as a death certificate, a legal heir certificate or nominee proof.
+Nominee details are often missing or out of date.
+The family is grieving, often not fluent in English, and is sent back and forth between offices.
+The RBI reported about ₹78,000 crore in unclaimed bank deposits as of March 2024. That doesn't count unclaimed insurance and mutual fund money.
+The track asks for journeys that are "more human". This one fits that directly.
+
+How it works
+Phase 1: while the user is alive (Legacy Vault)
+
+Asset discovery. With the user's consent, an AI agent reads their Paytm transactions, statements and SMS. It finds recurring premiums, SIPs, EMIs and FDs, then suggests entries: "You pay ₹2,340 a month to HDFC Life. Add this policy to your vault?"
+Document understanding. The user uploads policy PDFs. The AI extracts the sum assured, nominee, claim requirements and exclusions.
+Nominee gap check. The AI flags gaps like "Your ₹50L term plan has no nominee" or "Your MF nominee is your late father". Each flag gets a one-tap fix.
+Automatic proof of life. Any normal Paytm activity (a UPI payment, an app login) counts as a check-in. The user never has to confirm they're alive manually.
+Phase 2: after death (Claim Co-pilot)
+
+Unlock. Four conditions must all be met before anything is released:
+
+Check-ins stop for N days.
+M of N trusted guardians confirm the death.
+A hash of the death certificate is submitted.
+A 30-day challenge window passes, during which the owner can cancel.
+Then the smart contract releases the encrypted asset map to the nominees.
+
+Voice-first guidance. An AI guide works in Hindi, Marathi, Tamil and other languages through Sarvam. It says something like: "Your father had 4 policies and 2 FDs. Let's start with the one that pays out fastest."
+
+Claim packs. For each institution, the AI builds a checklist, pre-fills the forms, reads the death certificate with OCR, and drafts the claim letters.
+
+Tracking and escalation. Every claim step is timestamped on-chain. IRDAI sets deadlines for settling death claims, so the app can generate an escalation letter automatically when an insurer misses one.
+
+Why blockchain is needed here
+If one company held the "release the data when I die" switch, the family would have to trust that company not to misuse it. The chain enforces the rules without anyone in the middle:
+
+Legacy Vault contract (Sepolia or Solana devnet). Handles check-ins, guardian confirmations, the time lock, the challenge window and the release.
+Split-key encryption. The asset map is encrypted and stored off-chain (IPFS). No single party, including Paytm, can decrypt it early.
+Nominee credential. Each nominee gets a non-transferable token (soulbound NFT) proving they are entitled. Insurers can verify it instantly.
+Tamper-proof claim timeline. On-chain timestamps show exactly when each claim step happened, which backs up escalations.
+Only hashes go on-chain. Personal data stays encrypted off-chain, which keeps it in line with India's DPDP Act.
+Why Paytm would want it
+Cross-selling. The vault shows coverage gaps, so the app can say "You have no term cover. Your family would get ₹0." That drives Paytm Insurance and Paytm Money sales.
+Retention across generations. The heirs become Paytm users, and they arrive with trust in the app.
+An advantage competitors lack. Paytm's transaction data makes the automatic proof of life possible. Other apps can't copy it easily.
+Regulatory goodwill. It supports what RBI (the UDGAM portal) and SEBI (nominee rules) are already pushing for.
+Demo flow for the hackathon
+The user connects accounts and the AI finds 5 assets, 2 of them without a nominee.
+The user sets 2 nominees and 3 guardians, and the vault is created on devnet.
+Simulated death: check-ins stop, 2 of 3 guardians confirm, the challenge window is shortened for the demo, and the vault unlocks.
+The nominee, a mother, speaks Marathi to the co-pilot and gets a ranked claim plan and pre-filled claim packs.
+A live tracker shows claim steps with on-chain timestamps.
+Question the judges may ask: In India a nominee isn't always the legal heir. The answer is that Virasat doesn't replace legal succession. It makes sure the right people find the assets and get the paperwork done, which is where most claims currently get stuck.
+
+Backups, if this doesn't fit
+Paytm Promise: Every loan or insurance rejection comes with an on-chain "decision receipt" listing the reasons and the policy version used. An AI coach then gives the customer a concrete plan to get approved. Few teams are likely to build this.
+Paytm Mausam Kavach: Weather-triggered micro-insurance for gig workers, which pays out automatically over UPI. The concept is already known, so more teams are likely to build something like it.
+Do you approve Paytm Virasat? Once you do, send your implementation plans (stack, chain choice, team split) and I'll set up the architecture and start building.
