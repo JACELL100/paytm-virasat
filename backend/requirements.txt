@@ -1,0 +1,62 @@
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.4
+pydantic-settings==2.7.0
+python-multipart==0.0.20
+
+# --- Supabase / DB ---
+supabase==2.11.0
+
+# --- Auth ---
+PyJWT[crypto]==2.10.1
+
+# --- Blockchain ---
+web3==7.6.1
+eth-account==0.13.4
+# py-solc-x is used only by contracts/ (not required by the backend service)
+
+# --- Crypto ---
+cryptography==44.0.0
+pycryptodome==3.21.0
+
+# --- AI ---
+groq==0.13.1
+
+# --- Documents / OCR ---
+pdfplumber==0.11.4
+pypdfium2==4.30.1
+Pillow==11.0.0
+pytesseract==0.3.13
+# zxing-cpp: no prebuilt wheels on some platforms (notably certain Windows/py3.11 combos).
+# Fallback if `pip install zxing-cpp` fails in your environment: skip QR decode of death
+# certificates (guardians.py degrades gracefully and reports "QR decode unavailable").
+zxing-cpp==2.2.0
+
+# --- Analytics / matching ---
+pandas==2.2.3
+rapidfuzz==3.10.1
+rank-bm25==0.2.2
+
+# --- PDF generation ---
+fpdf2==2.8.2
+
+# --- Jobs / resilience ---
+APScheduler==3.10.4
+tenacity==9.0.0
+slowapi==0.1.9
+
+# --- Uploads ---
+filetype==1.2.0
+
+# --- Logging / monitoring ---
+structlog==24.4.0
+sentry-sdk[fastapi]==2.19.2
+
+# --- Email ---
+# (Brevo uses plain HTTP API via httpx, no dedicated SDK needed)
+
+# --- Tests ---
+pytest==8.3.4
+pytest-asyncio==0.25.0
+httpx==0.28.1

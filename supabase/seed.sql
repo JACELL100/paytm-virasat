@@ -1,0 +1,36 @@
+-- =============================================================================
+-- Paytm Virasat — supabase/seed.sql
+--
+-- Standard Supabase CLI convention: `supabase db reset` (and, for a fresh
+-- local project, `supabase start`) applies every file in `migrations/` in
+-- order and then runs this top-level `seed.sql` automatically.
+--
+-- This project keeps its actual seed data IN the migrations themselves
+-- (rather than only here) so that `supabase db push` against a real/staging
+-- project — which applies `migrations/` but does NOT run `seed.sql` — still
+-- gets the institutions knowledge base and the demo persona. The seed data
+-- lives in:
+--
+--   migrations/0002_institutions_seed.sql  — ~20 real Indian institutions
+--                                             (life/health insurers, banks,
+--                                             MF registrars, EPFO, NPS,
+--                                             a lender, Paytm Money/Insurance)
+--   migrations/0003_demo_seed.sql          — the demo persona (Rajesh Patil,
+--                                             2 nominees, 3 guardians, 7
+--                                             assets) per section 19 of
+--                                             Implementation_Plan.md. Rows
+--                                             that depend on a real
+--                                             auth.users row (profiles,
+--                                             owner_id / user_id columns)
+--                                             are left NULL here and are
+--                                             attached later by the
+--                                             backend's `POST /demo/reset`
+--                                             endpoint once the demo Google
+--                                             accounts have actually signed
+--                                             in.
+--
+-- Nothing further to do here — this file is intentionally a no-op beyond
+-- these comments. It exists so `supabase db reset` behaves exactly like
+-- `supabase db push` (both apply 0001/0002/0003 in order) with no surprise
+-- extra rows appearing only in local dev.
+-- =============================================================================

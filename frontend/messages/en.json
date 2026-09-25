@@ -1,0 +1,108 @@
+{
+  "common": {
+    "appName": "Paytm Virasat",
+    "tagline": "Jo aapka hai, woh aapke apno tak pahunche.",
+    "taglineTranslation": "What's yours should reach your family.",
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "viewOnEtherscan": "View on Etherscan",
+    "comingSoonTitle": "Coming soon",
+    "comingSoonBody": "We're still building this part of Virasat. Check back soon.",
+    "language": "Language",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "getStarted": "Get started"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "discover": "Discover",
+    "assets": "Assets",
+    "documents": "Documents",
+    "vault": "Vault",
+    "activity": "Activity",
+    "guardian": "Guardian",
+    "nominee": "Nominee"
+  },
+  "marketing": {
+    "nav": {
+      "howItWorks": "How it works",
+      "trust": "Trust & security",
+      "faq": "FAQ",
+      "login": "Log in",
+      "getStarted": "Secure my family"
+    },
+    "hero": {
+      "eyebrow": "Powered by Paytm · Secured on-chain",
+      "title": "Your family's claim to what's rightfully theirs.",
+      "subtitle": "Virasat quietly finds your policies, FDs and investments, flags missing nominees, and makes sure your family can find and claim everything — guided step by step, in their own language.",
+      "ctaPrimary": "Secure my family",
+      "ctaSecondary": "See how it works",
+      "statLabel": "Unclaimed money sitting with Indian banks and insurers today",
+      "statSource": "RBI & IRDAI depositor education data, illustrative"
+    },
+    "how": {
+      "title": "Three steps to peace of mind",
+      "subtitle": "No paperwork marathons. No crypto wallets. Just your Paytm login.",
+      "step1Title": "Discover",
+      "step1Body": "We scan a statement, your SMS, or your Paytm activity to find every policy, FD and fund — then flag what's missing a nominee.",
+      "step2Title": "Seal",
+      "step2Body": "Add nominees and trusted guardians. Everything is encrypted and sealed into your Virasat vault, anchored on Sepolia — no wallet, no gas, no crypto jargon.",
+      "step3Title": "Protect",
+      "step3Body": "Your everyday Paytm activity is automatic proof of life. If the unthinkable happens, guardians confirm, a challenge window protects against mistakes, and only then is the vault released."
+    },
+    "trust": {
+      "title": "Built to be trusted with what matters most",
+      "subtitle": "This touches grief and money — the two things that deserve the most care.",
+      "point1Title": "On-chain, tamper-proof rules",
+      "point1Body": "Release rules live on Sepolia. No single person — not even Paytm — can override them.",
+      "point2Title": "Encrypted, never exposed",
+      "point2Body": "Only cryptographic hashes go on-chain. Your account numbers and documents stay encrypted, always.",
+      "point3Title": "You stay in control",
+      "point3Body": "Every release starts with a challenge window you can cancel. Any activity on your account cancels it automatically.",
+      "disclaimer": "Virasat is not a will. A nominee may hold assets as a trustee for legal heirs — Virasat helps your family find and claim; succession law still applies."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": "Do I need a crypto wallet?",
+      "a1": "No. Virasat creates a secure custodial signer for you behind the scenes. You only ever use your Google login.",
+      "q2": "What happens to my data?",
+      "a2": "Your documents and account details are encrypted (AES-256-GCM) and stored privately. Only tamper-proof hashes are written on-chain — never personal data.",
+      "q3": "How does Virasat know I'm alive?",
+      "a3": "Your everyday Paytm activity — logins, payments — automatically resets the vault's inactivity clock. No extra steps.",
+      "q4": "Can a nominee just take the vault?",
+      "a4": "No. Release needs sustained inactivity, plus confirmation from a majority of your chosen guardians, plus a challenge window you or any activity can cancel."
+    },
+    "cta": {
+      "title": "Make sure your family never has to search.",
+      "subtitle": "It takes less than ten minutes to seal your first Virasat vault.",
+      "button": "Secure my family today"
+    },
+    "footer": {
+      "rights": "A hackathon build for Paytm Build for India AI Hackathon.",
+      "disclaimer": "Virasat is not a will and does not replace legal succession advice."
+    }
+  },
+  "dashboard": {
+    "greeting": "Welcome back",
+    "legacyScoreTitle": "Legacy Score",
+    "legacyScoreBody": "How ready your family is to find and claim everything you own.",
+    "vaultStatusTitle": "Vault status",
+    "vaultDraft": "Not sealed yet",
+    "vaultActive": "Active — protected",
+    "vaultChallenge": "Challenge window open",
+    "vaultReleased": "Released to your family",
+    "vaultRevoked": "Revoked",
+    "sealCta": "Set up your vault",
+    "assetMapTitle": "Your asset map",
+    "assetMapEmpty": "No assets discovered yet. Start with a quick scan.",
+    "assetMapCta": "Discover assets",
+    "gapsTitle": "Top gaps to fix",
+    "gapsEmpty": "No gaps found — great job keeping things current.",
+    "activityTitle": "Recent activity",
+    "activityEmpty": "No activity recorded yet.",
+    "totalValue": "Total tracked value"
+  }
+}

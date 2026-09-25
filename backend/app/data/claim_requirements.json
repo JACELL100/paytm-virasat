@@ -1,0 +1,67 @@
+{
+  "generic_templates": {
+    "life_death_claim": {
+      "product_types": ["term_life", "life_endowment", "ulip"],
+      "base_docs": ["Claim form", "Death certificate", "Policy document", "Nominee KYC", "Nominee bank proof (cancelled cheque / passbook)"],
+      "conditional_docs": [
+        {"if": "cause_of_death == illness", "add": ["Medical attendant's certificate", "Hospital treatment records"]},
+        {"if": "cause_of_death == accident", "add": ["FIR copy", "Post-mortem report"]}
+      ],
+      "escalation_ladder": ["insurer_gro", "irdai_bima_bharosa", "ombudsman"]
+    },
+    "health_claim": {
+      "product_types": ["health"],
+      "base_docs": ["Claim form", "Death certificate", "Policy document", "Nominee/claimant KYC", "Hospital bills (if reimbursement)"],
+      "conditional_docs": [],
+      "escalation_ladder": ["insurer_gro", "irdai_bima_bharosa", "ombudsman"]
+    },
+    "bank_deposit_claim": {
+      "product_types": ["fd", "savings"],
+      "base_docs": ["Claim form", "Death certificate", "Nominee KYC"],
+      "conditional_docs": [
+        {"if": "no_nominee == true", "add": ["Legal heir certificate / succession certificate", "Indemnity bond", "Affidavit"]}
+      ],
+      "escalation_ladder": ["bank_gro", "rbi_cms"]
+    },
+    "mf_transmission": {
+      "product_types": ["mutual_fund"],
+      "base_docs": ["Transmission request form", "Death certificate", "Claimant KYC", "Claimant bank proof"],
+      "conditional_docs": [
+        {"if": "no_nominee == true", "add": ["Legal heir certificate", "Indemnity bond", "Affidavit", "NOC from other legal heirs"]}
+      ],
+      "escalation_ladder": ["registrar_gro", "sebi_scores"]
+    },
+    "epf_claim": {
+      "product_types": ["epf"],
+      "base_docs": ["Form 20 (EPF)", "Form 10D (EPS, if applicable)", "Death certificate", "Nominee KYC", "Bank proof", "Succession certificate (if no nominee)"],
+      "conditional_docs": [],
+      "escalation_ladder": ["epfo_grievance"]
+    },
+    "nps_claim": {
+      "product_types": ["nps"],
+      "base_docs": ["Withdrawal/claim form", "Death certificate", "Nominee KYC", "Bank proof", "PRAN card copy"],
+      "conditional_docs": [],
+      "escalation_ladder": ["nps_grievance"]
+    },
+    "loan_protection_claim": {
+      "product_types": ["loan"],
+      "base_docs": ["Claim form", "Death certificate", "Loan account statement", "Claimant/legal heir KYC"],
+      "conditional_docs": [],
+      "escalation_ladder": ["lender_gro", "rbi_cms"],
+      "urgency_note": "File first if an active loan-protection cover exists -- stops the family paying EMIs."
+    },
+    "motor_claim": {
+      "product_types": ["motor"],
+      "base_docs": ["Claim form", "Death certificate", "RC copy", "Claimant/legal heir KYC"],
+      "conditional_docs": [],
+      "escalation_ladder": ["insurer_gro", "irdai_bima_bharosa", "ombudsman"]
+    }
+  },
+  "escalation_contacts": {
+    "irdai_bima_bharosa": {"name": "IRDAI Bima Bharosa", "url": "https://bimabharosa.irdai.gov.in"},
+    "ombudsman": {"name": "Insurance Ombudsman", "url": "https://www.cioins.co.in"},
+    "rbi_cms": {"name": "RBI Complaint Management System (Integrated Ombudsman)", "url": "https://cms.rbi.org.in"},
+    "sebi_scores": {"name": "SEBI SCORES", "url": "https://scores.sebi.gov.in"},
+    "rbi_udgam": {"name": "RBI UDGAM (unclaimed deposits)", "url": "https://udgam.rbi.org.in"}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "paytm-virasat-contracts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Solidity sources for Paytm Virasat (VirasatRegistry, NomineeCredential, ClaimLedger). No JS build tooling — compilation is done with py-solc-x via scripts/compile.py. This package.json exists only to vendor @openzeppelin/contracts as a Solidity import source.",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5"
+  }
+}

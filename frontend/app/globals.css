@@ -1,0 +1,247 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------- */
+/* Paytm Virasat design tokens (Implementation Plan §6.1)                  */
+/* ---------------------------------------------------------------------- */
+:root {
+  --brand-navy: #002e6e;
+  --brand-cyan: #00baf2;
+  --cyan-soft: #e6f8fe;
+  --navy-950: #00112b;
+  --gold: #e9b44c;
+
+  --bg: #f6f9fc;
+  --surface: #ffffff;
+  --surface-2: #f0f4f9;
+  --border: #e3eaf3;
+  --text: #0a1a33;
+  --muted: #5b6b82;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #e5484d;
+
+  --brand-gradient: linear-gradient(135deg, #00112b 0%, #002e6e 55%, #00baf2 130%);
+  --shadow-soft: 0 1px 2px rgba(0, 46, 110, 0.06), 0 8px 24px rgba(0, 46, 110, 0.08);
+
+  --radius-input: 12px;
+  --radius-card: 16px;
+  --radius-hero: 24px;
+  --radius: 12px;
+
+  /* shadcn/ui mapping */
+  --background: var(--bg);
+  --foreground: var(--text);
+  --card: var(--surface);
+  --card-foreground: var(--text);
+  --popover: var(--surface);
+  --popover-foreground: var(--text);
+  --primary: var(--brand-navy);
+  --primary-foreground: #ffffff;
+  --secondary: var(--cyan-soft);
+  --secondary-foreground: var(--brand-navy);
+  --muted-bg: var(--surface-2);
+  --muted-foreground: var(--muted);
+  --accent: var(--cyan-soft);
+  --accent-foreground: var(--brand-navy);
+  --destructive: var(--danger);
+  --destructive-foreground: #ffffff;
+  --input: var(--border);
+  --ring: var(--brand-cyan);
+}
+
+.dark,
+:root[data-theme="dark"] {
+  --cyan-soft: #06283d;
+  --bg: #030a18;
+  --surface: #0a1428;
+  --surface-2: #0f1d38;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #eaf2ff;
+  --muted: #8fa3bf;
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #ff6369;
+  --gold: #f2c66d;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  --background: var(--bg);
+  --foreground: var(--text);
+  --card: var(--surface);
+  --card-foreground: var(--text);
+  --popover: var(--surface);
+  --popover-foreground: var(--text);
+  --primary: var(--brand-cyan);
+  --primary-foreground: var(--navy-950);
+  --secondary: var(--cyan-soft);
+  --secondary-foreground: #eaf2ff;
+  --muted-bg: var(--surface-2);
+  --muted-foreground: var(--muted);
+  --accent: var(--cyan-soft);
+  --accent-foreground: #eaf2ff;
+  --destructive: var(--danger);
+  --destructive-foreground: #ffffff;
+  --input: var(--border);
+  --ring: var(--brand-cyan);
+}
+
+@theme inline {
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-cyan-soft: var(--cyan-soft);
+  --color-navy-950: var(--navy-950);
+  --color-gold: var(--gold);
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-bg: var(--muted-bg);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius-card);
+  --radius-2xl: var(--radius-hero);
+  --radius-full: 9999px;
+
+  --font-display: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, sans-serif;
+  --font-devanagari: var(--font-noto-devanagari), "Noto Sans Devanagari", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+
+  --animate-shimmer: shimmer 1.8s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 2.4s ease-in-out infinite;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.55;
+    }
+  }
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  :lang(hi),
+  :lang(mr) {
+    font-family: var(--font-devanagari);
+  }
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .brand-gradient {
+    background-image: var(--brand-gradient);
+  }
+  .glass-surface {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    background: color-mix(in srgb, var(--surface) 55%, transparent);
+    border: 1px solid var(--border);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), var(--shadow-soft);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shimmer-bg {
+    background-image: linear-gradient(
+      100deg,
+      var(--surface-2) 30%,
+      color-mix(in srgb, var(--brand-cyan) 12%, var(--surface-2)) 50%,
+      var(--surface-2) 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+  }
+}
+
+/* Respect reduced-motion globally (Implementation Plan §6.4) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

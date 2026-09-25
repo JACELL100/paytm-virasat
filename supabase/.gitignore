@@ -1,0 +1,6 @@
+# Supabase CLI local artifacts
+.branches
+.temp
+
+# dotenvx
+**/.env.keys

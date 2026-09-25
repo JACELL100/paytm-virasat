@@ -1,0 +1,76 @@
+services:
+  - type: web
+    name: paytm-virasat-backend
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: ENV
+        value: production
+      - key: DEMO_MODE
+        value: "true"
+      - key: FRONTEND_ORIGIN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_JWKS_URL
+        sync: false
+      - key: SUPABASE_JWT_SECRET
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL_AGENT
+        value: openai/gpt-oss-120b
+      - key: GROQ_MODEL_AGENT_FALLBACK
+        value: llama-3.3-70b-versatile
+      - key: GROQ_MODEL_EXTRACT
+        value: llama-3.3-70b-versatile
+      - key: GROQ_MODEL_EXTRACT_FALLBACK
+        value: gpt-oss-20b
+      - key: GROQ_MODEL_FAST
+        value: llama-3.1-8b-instant
+      - key: GROQ_MODEL_FAST_FALLBACK
+        value: gpt-oss-20b
+      - key: GROQ_MODEL_VISION
+        value: qwen/qwen3.8-27b
+      - key: GROQ_MODEL_STT
+        value: whisper-large-v3
+      - key: GROQ_MODEL_STT_FALLBACK
+        value: whisper-large-v3-turbo
+      - key: SARVAM_API_KEY
+        sync: false
+      - key: SEPOLIA_RPC_URL
+        sync: false
+      - key: SEPOLIA_RPC_FALLBACK
+        value: https://ethereum-sepolia-rpc.publicnode.com
+      - key: CHAIN_ID
+        value: "11155111"
+      - key: RELAYER_PRIVATE_KEY
+        sync: false
+      - key: REGISTRY_ADDRESS
+        sync: false
+      - key: CREDENTIAL_ADDRESS
+        sync: false
+      - key: LEDGER_ADDRESS
+        sync: false
+      - key: REGISTRY_DEPLOY_BLOCK
+        sync: false
+      - key: WALLET_ENC_KEY
+        sync: false
+      - key: ESCROW_KEY
+        sync: false
+      - key: RECOVERY_KEY
+        sync: false
+      - key: CRON_SECRET
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
+      - key: MAIL_FROM
+        value: virasat.demo@gmail.com
+      - key: SENTRY_DSN
+        sync: false

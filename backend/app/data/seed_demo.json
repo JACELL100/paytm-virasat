@@ -1,0 +1,23 @@
+{
+  "persona": {
+    "owner": {"full_name": "Rajesh Patil", "email": "rajesh.patil.demo@paytm-virasat.example", "phone": "+91-98230-00001", "annual_income": 1200000, "language": "en"},
+    "nominees": [
+      {"name": "Sunita Patil", "relation": "wife", "email": "sunita.patil.demo@paytm-virasat.example", "share_bps": 6000, "language": "mr"},
+      {"name": "Aarav Patil", "relation": "son", "email": "aarav.patil.demo@paytm-virasat.example", "share_bps": 4000, "language": "en"}
+    ],
+    "guardians": [
+      {"name": "Suresh Patil", "relation": "brother", "email": "suresh.patil.demo@paytm-virasat.example"},
+      {"name": "Imran Shaikh", "relation": "friend", "email": "imran.shaikh.demo@paytm-virasat.example"},
+      {"name": "Dr. Mehta", "relation": "family doctor", "email": "dr.mehta.demo@paytm-virasat.example"}
+    ]
+  },
+  "paytm_feed": [
+    {"date": "2026-01-05", "narration": "LIC OF INDIA PREMIUM PAYMENT", "debit": 8333.0, "credit": null, "meta": {"suggested_type": "life_endowment", "institution_slug": "lic", "value_estimate": 1000000, "nominee_status": "ok"}},
+    {"date": "2026-02-05", "narration": "HDFCLIFE TERM PLAN PREMIUM", "debit": 4166.0, "credit": null, "meta": {"suggested_type": "term_life", "institution_slug": "hdfc-life", "value_estimate": 5000000, "nominee_status": "missing"}},
+    {"date": "2026-01-15", "narration": "SBI FD INTEREST CREDIT", "debit": null, "credit": 2100.0, "meta": {"suggested_type": "fd", "institution_slug": "sbi", "value_estimate": 300000, "nominee_status": "ok"}},
+    {"date": "2026-02-01", "narration": "AXIS MF SIP BLUECHIP FUND", "debit": 8000.0, "credit": null, "meta": {"suggested_type": "mutual_fund", "institution_slug": "axis-mf", "value_estimate": 96000, "nominee_status": "unknown"}},
+    {"date": "2026-01-20", "narration": "PAYTM MONEY EQUITY PURCHASE", "debit": 15000.0, "credit": null, "meta": {"suggested_type": "stocks", "institution_slug": "paytm-money", "value_estimate": 150000, "nominee_status": "unknown"}},
+    {"date": "2026-01-10", "narration": "STAR HEALTH FAMILY FLOATER PREMIUM", "debit": 2500.0, "credit": null, "meta": {"suggested_type": "health", "institution_slug": "star-health", "value_estimate": 1000000, "nominee_status": "ok"}},
+    {"date": "2026-02-10", "narration": "BAJAJ FINANCE LOAN EMI", "debit": 22000.0, "credit": null, "meta": {"suggested_type": "loan", "institution_slug": "bajaj-finance", "value_estimate": 800000, "nominee_status": "unknown", "has_active_loan_protection": true}}
+  ]
+}

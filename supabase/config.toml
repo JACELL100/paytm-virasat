@@ -1,0 +1,50 @@
+# Paytm Virasat — local Supabase CLI config.
+# Minimal config for `supabase start` / `supabase db reset` in local dev.
+# The hosted project (region ap-south-1 / Mumbai, per Implementation_Plan.md
+# section 15.1) is configured separately via `supabase link` + the Supabase
+# dashboard; this file only affects the local Docker stack.
+
+project_id = "paytm-virasat"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[inbucket]
+enabled = true
+port = 54324
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+jwt_expiry = 3600
+enable_signup = true
+
+# Google OAuth cannot be configured via SQL migration. For local dev only,
+# you may fill these from env vars (see supabase/README.md); for the hosted
+# project, configure Google under Auth > Providers in the Supabase dashboard
+# per Implementation_Plan.md section 15.1.
+[auth.external.google]
+enabled = false
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_CLIENT_SECRET)"
+
+[analytics]
+enabled = false
